@@ -42,7 +42,7 @@ if( isset( $_POST['send'] ) ) {
 	</head>
     <body>
         <h1>Upload Bugfiles</h1>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <form action="uploadbuglist.php" method="post" enctype="multipart/form-data">
 			<dd><label for="file">Upload you Screenshot:</label></dd>
             <dd><input type="file" name="file" id="file" required><br></dd>
 			<dd>Prio: 1<input type="range" name="points" min="1" max="10" value="<?php echo @$_POST['prio']; ?>" required>10</dd>
