@@ -65,7 +65,7 @@ if( isset( $_POST['send'] ) ) {
 			 <dd>Add your homepage: <input type="url" name="homepage" placeholder="http://www.google.com" value="<?php echo @$_POST['webpage']; ?>" required></dd>
 			 
 			 <dd>E-mail: <input type="email" name="email" placeholder="expamle@domain.com" value="<?php echo @$_POST['to']; ?>" required></dd>
-			 
+			 <dd>Password: <input type="password" name="pwd"></dd>
 			 <?php
 				require_once('recaptcha-php-1.11/recaptchalib.php');
 				$publickey = "6LeKK-gSAAAAAEOSlc_SsVGJSyZMiPaPLnzM5K2e"; // you got this from the signup page
