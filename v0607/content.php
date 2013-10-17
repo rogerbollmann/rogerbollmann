@@ -168,11 +168,10 @@ if( isset( $_GET['delete'] ) ) {
 				<div class="modal-header">
 					<a href="#" class="close" data-dismiss="modal">×</a>
 					<h3>Please enter a new ToDo.</h3>
-					</div>
+				</div>
 				<div class="modal-body">
 					<div class="divDialogElements">
-						ToDo: <!--<input type="text" class="control-label" id="createToDo" value="ToDo Description" required>-->
-						<textarea class="control-label" rows="3" name="contentToDo" type="text" placeholder="ToDo Description" required><?php echo @$_POST['contentToDo']; ?></textarea>
+						ToDo: <textarea class="control-label" rows="3" name="contentToDo" type="text" placeholder="ToDo Description" required><?php echo @$_POST['contentToDo']; ?></textarea>
 					</div>
 				</div>
 
@@ -180,7 +179,7 @@ if( isset( $_GET['delete'] ) ) {
 					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
 					<input type="hidden" name="save" value="1" />
 					<input type="submit" class="btn btn-primary" onclick="okClicked ();" value="Save" />
-					<!--<a href="#" type="submit" class="btn btn-primary" onclick="okClicked ();" value="Save">Save</a>-->
+					
 				</div>
 			</div>
 			</form>
