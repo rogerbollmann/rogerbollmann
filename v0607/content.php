@@ -121,8 +121,8 @@ if( isset( $_GET['delete'] ) ) {
 <div class="span9">
     <div class="tabbable"> 
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1" data-toggle="tab" data-toggle="tooltip" title="List all ToDo's">List all open Todo's</a></li>
-        <li><a href="#tab2" data-toggle="tab" data-toggle="tooltip" title="Show al ToDo's">Show all ToDo's</a></li>
+        <li class="active"><a href="#tab1" data-toggle="tab" data-toggle="tooltip" title="List all open ToDo's">List all open Todo's</a></li>
+        <li><a href="#tab2" data-toggle="tab" data-toggle="tooltip" title="Show all completed ToDo's">Show all completed ToDo's</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="tab1">
@@ -263,7 +263,7 @@ if( isset( $_GET['delete'] ) ) {
 		
 			
         <div class="tab-pane" id="tab2">
-          <p><legend>List all ToDO</legend>
+          <p><legend>List all completed ToDO</legend>
 	
 				<table class = "table table-striped">
 					<thead>
