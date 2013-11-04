@@ -1,0 +1,50 @@
+Aufgabe 1
+
+Erstellen Sie gemäss folgendne Anforderungen ein UML
+
+Klasse Lebewesen
+abstract class Lebewesen
+
+Variable
+$alter
+
+
+Methoden
+altern()                Soll den Programmieren zwingen, diese Methode zu implementieren
+getAlter()              Ein ausprogrammierter Getter für das Alter Attribut.
+
+Klasse Mensch
+class Mensch extends Lebewesen
+
+Variable
+$name
+$alter
+$geschlecht
+$vorfahre
+
+Methoden
+__construct()           Setzen von Name und Geschlecht, sowie das Alter um 1 Jahr erhöhen
+__destruct()            Ein Meldung, dass der Mensch gestorben ist
+alter()                 Das Alter um 1 Jahr erhöhen
+getName()               Der Name des Menschen ausgeben
+umbenennen()            Setzt den Namen neu des Menschen
+geburtstagFeiern()      Erhöht das Alter um 1 Jahr und gibt eine Meldung aus
+neueEvolutionstheorie() Setzt den Vorfahre neu
+getVorfahre()           Gibt den Vorfahre zurück
+
+Erstellen Sie eine statische Variable, um den Vorfahren als String zu speichern
+
+Klasse Schweizer
+class Schweizer extends Mensch
+
+Variable
+$name
+$alter
+$geschlecht
+$vorfahre
+
+Methoden
+__construct()           gleich wie Konstruktor von =Mensch=
+umbenennen()            Überladet die =umbenennen()= von =Mensch= und führt einen Behördengang durch
+behoerdengang()         Wirft eine Exception, sollte der Geduldsfaden gerissen sein
+

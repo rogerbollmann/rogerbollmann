@@ -1,0 +1,30 @@
+Aufgabe 4:
+
+Use Optimistic Locking. Optimistic locking does not use exclusive locks when reading. Instead, a check is made during the update to make sure that the record has not been changed since it was read. This can be done by checking every field in the table.
+ie. UPDATE Table1 SET Col2 = x WHERE COL1=:OldCol1 AND COl2=:OldCol AND Col3=:OldCol3 AND...
+There are, of course, several disadvantages to this. First, you must have already SELECTed every single column from the table. Secondly, you must build and execute this massive statement. *Most* people implement this, instead, through a single column, usually called timestamp. This column is used *for no other purpose* than implementing optimistic concurrency. It can be a number or a date. The idea is that it is given a value when the row is inserted. Whenever the record is read, the timestamp column is read as well. When an update is performed, the timestamp column is checked. If it has the same value at UPDATE time as it did when it was read, then all is well, the UPDATE is performed and *the timestamp is changed!*. If the timestamp value is different at UPDATE time, then an error is returned to the user - they must re-read the record, re-make their changes, and try to update the record again.
+
+Quelle: http://www.dbasupport.com/forums/showthread.php?7282-What-is-Optimistic-Locking-vs-Pessimistic-Locking
+
+Aufgabe 5:
+
+- User 1 reads the record, including the timestamp of 21
+- User 2 reads the record, including the timestamp of 21
+- User 1 attempts to update the record. The timestamp in had (21) matches the timestamp in the database(21), so the update is performed and the timestamp is update (22).
+- User 2 attempts to update the record. The timestamp in hand(21) *does not* match the timestamp in the database(22), so an error is returned. User 2 must now re-read the record, including the new timestamp(22) and User 1's changes, re-apply their changes and re-attempt the update.
+
+Quelle: http://www.dbasupport.com/forums/showthread.php?7282-What-is-Optimistic-Locking-vs-Pessimistic-Locking
+
+Aufgabe 6:
+
+InnoDB erkennt automatisch Deadlock-Situationen (also Fälle, in denen sich zwei oder mehrere Prozesse gleichzeitig blockieren und jeder auf das Ende der Transaktion eines anderen Prozesses wartet und das bis in alle Ewigkeit. In solchen Situationen tritt bei dem Prozess, der den Deadlock ausgelöst hat, ein Fehler auf. Noch offene SQL-Statements werden durch ROLLBACK widerrufen.
+Für InnoDB nicht erkennbare Deadlocks können entstehen, wenn SQL-Statements sowhol InnoDB- als auf andere Tabellen betreffen. Damit die Clients in solchen Fällen nicht endlos warten müssen, bestimmt die Konfitugationseinstellungen innodb_lock_wait_timeout=n die maximale Wartezeit (per Default 50 Sekunden).
+
+Aufgabe 7:
+
+Folgende Transaktionsisolationen können durch optimistisches locking behoben werden:
+
+- Non-Repeatable Read
+- Lost-Update
+
+
