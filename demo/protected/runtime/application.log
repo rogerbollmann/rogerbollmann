@@ -1,0 +1,27 @@
+2013/11/11 11:03:59 [error] [php] Undefined variable: time (/vagrant/dev/web/application/demo/protected/views/message/helloWorld.php:7)
+Stack trace:
+#0 /vagrant/dev/web/yii/framework/web/CController.php(869): MessageController->renderFile()
+#1 /vagrant/dev/web/yii/framework/web/CController.php(782): MessageController->renderPartial()
+#2 /vagrant/dev/web/application/demo/protected/controllers/MessageController.php(7): MessageController->render()
+#3 /vagrant/dev/web/yii/framework/web/actions/CInlineAction.php(49): MessageController->actionHelloWorld()
+#4 /vagrant/dev/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /vagrant/dev/web/yii/framework/web/CController.php(286): MessageController->runAction()
+#6 /vagrant/dev/web/yii/framework/web/CController.php(265): MessageController->runActionWithFilters()
+#7 /vagrant/dev/web/yii/framework/web/CWebApplication.php(282): MessageController->run()
+#8 /vagrant/dev/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /vagrant/dev/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /vagrant/dev/web/application/demo/index.php(13): CWebApplication->run()
+REQUEST_URI=/application/demo/index.php?r=message/helloWorld
+in /vagrant/dev/web/application/demo/protected/views/message/helloWorld.php (7)
+in /vagrant/dev/web/application/demo/protected/controllers/MessageController.php (7)
+in /vagrant/dev/web/application/demo/index.php (13)
+2013/11/11 14:12:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Hello".' in /vagrant/dev/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /vagrant/dev/web/yii/framework/web/CController.php(270): CController->missingAction('Hello')
+#1 /vagrant/dev/web/yii/framework/web/CWebApplication.php(282): CController->run('Hello')
+#2 /vagrant/dev/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('message/Hello')
+#3 /vagrant/dev/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /vagrant/dev/web/application/demo/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/application/demo/index.php?r=message/Hello
+---

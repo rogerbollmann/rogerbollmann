@@ -1,0 +1,10 @@
+vagrant@dev:/var/www/web/application/demo/protected/tests$ phpunit unit/MessageTest.php
+PHPUnit 3.7.28 by Sebastian Bergmann.
+
+Configuration read from /vagrant/dev/web/application/demo/protected/tests/phpunit.xml
+
+.
+
+Time: 20 ms, Memory: 9.75Mb
+
+OK (1 test, 1 assertion)
